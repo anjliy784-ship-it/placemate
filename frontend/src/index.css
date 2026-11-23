@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #14243A;
+  background: #FFFFFF;
+
+  --color-primary: #2459A6;
+  --color-navy: #14243A;
+  --color-background: #F7F8FA;
+  --color-light-blue: #E8EEF7;
+  --color-text: #14243A;
+  --color-muted: #64748B;
+  --color-border: #E2E8F0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: #FFFFFF;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: calc(100vh - 80px);
+  padding: 100px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background);
+}
+
+.hero-content {
+  max-width: 850px;
+  text-align: center;
+}
+
+/* Small introductory label */
+.hero-label {
+  display: inline-block;
+  padding: 9px 16px;
+  margin-bottom: 25px;
+  border-radius: 30px;
+  background-color: var(--color-light-blue);
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Main heading */
+.hero-content h1 {
+  font-size: clamp(38px, 5vw, 60px);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: var(--color-navy);
+}
+
+.hero-content h1 span {
+  color: var(--color-primary);
+}
+
+/* Description */
+.hero-content p {
+  max-width: 680px;
+  margin: 25px auto 35px;
+  color: var(--color-muted);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* Hero buttons */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-buttons button {
+  padding: 15px 25px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.hero-buttons button:first-child {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border: 1px solid var(--color-primary);
+}
+
+.hero-buttons button:first-child:hover {
+  background-color: var(--color-navy);
+}
+
+.hero-buttons button:last-child {
+  background-color: #FFFFFF;
+  color: var(--color-navy);
+  border: 1px solid var(--color-border);
+}
+
+.hero-buttons button:last-child:hover {
+  background-color: var(--color-light-blue);
+}

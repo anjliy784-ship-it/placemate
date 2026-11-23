@@ -1,0 +1,165 @@
+:root {
+  --sal-slate-900: #0f172a;
+  --sal-slate-800: #1e293b;
+  --sal-slate-700: #334155;
+  --sal-slate-500: #64748b;
+  --sal-slate-400: #94a3b8;
+  --sal-slate-200: #e2e8f0;
+  --sal-slate-100: #f1f5f9;
+  --sal-slate-50:  #f8fafc;
+  --sal-white:     #ffffff;
+}
+
+.sal-auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--sal-slate-50);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+.sal-auth-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--sal-white);
+  border: 1px solid var(--sal-slate-200);
+  border-radius: 12px;
+  padding: 36px 32px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+.sal-auth-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.sal-logo-badge {
+  width: 44px;
+  height: 44px;
+  background-color: var(--sal-slate-900);
+  color: var(--sal-white);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+
+.sal-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #991b1b;
+  background-color: #fee2e2;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.sal-badge-pill svg {
+  stroke: #991b1b;
+}
+
+.sal-auth-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--sal-slate-900);
+  margin: 0 0 6px 0;
+}
+
+.sal-auth-header p {
+  font-size: 12.5px;
+  color: var(--sal-slate-500);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.sal-error-banner {
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.sal-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sal-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sal-group label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--sal-slate-700);
+}
+
+.sal-group input {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--sal-slate-200);
+  font-size: 13.5px;
+  color: var(--sal-slate-900);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.sal-group input:focus {
+  border-color: var(--sal-slate-900);
+}
+
+.sal-submit-btn {
+  margin-top: 6px;
+  padding: 11px;
+  background-color: var(--sal-slate-900);
+  color: var(--sal-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.sal-submit-btn:hover:not(:disabled) {
+  background-color: #1e293b;
+}
+
+.sal-footer {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--sal-slate-400);
+  line-height: 1.4;
+}
+
+.sal-role-switch {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--sal-slate-100);
+}
+
+.sal-role-switch a {
+  color: var(--sal-slate-700);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sal-role-switch a:hover {
+  text-decoration: underline;
+}
