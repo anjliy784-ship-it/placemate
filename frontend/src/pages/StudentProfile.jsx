@@ -106,7 +106,7 @@ function StudentProfile() {
 
     const fetchProfile = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/students/profile/${studentId}`);
+        const res = await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/students/profile/${studentId}`);
         if (res.ok) {
           const data = await res.json();
           setProfile({
@@ -135,7 +135,7 @@ function StudentProfile() {
   const runAiResumeAudit = async (idToScan) => {
     setAnalyzing(true);
     try {
-      const res = await fetch("http://localhost:5000/api/ai/analyze-profile-resume", {
+      const res = await fetch((import.meta.env.VITE_API_URL || "http://localhost:5000") + "/api/ai/analyze-profile-resume", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ studentId: idToScan }),
@@ -159,7 +159,7 @@ function StudentProfile() {
     setStatusMsg({ type: "", text: "" });
 
     try {
-      const res = await fetch(`http://localhost:5000/api/students/profile/${studentId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/students/profile/${studentId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -202,7 +202,7 @@ function StudentProfile() {
     formData.append("resume", selectedFile);
 
     try {
-      const res = await fetch(`http://localhost:5000/api/students/upload-resume/${studentId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/students/upload-resume/${studentId}`, {
         method: "POST",
         body: formData,
       });

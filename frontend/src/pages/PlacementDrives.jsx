@@ -101,9 +101,9 @@ function PlacementDrives() {
       try {
         setLoading(true);
         const [drivesRes, appliedRes, profileRes] = await Promise.all([
-          fetch("http://localhost:5000/api/drives"),
-          fetch(`http://localhost:5000/api/applications/user/${studentId}`),
-          fetch(`http://localhost:5000/api/students/profile/${studentId}`),
+          fetch((import.meta.env.VITE_API_URL || "http://localhost:5000") + "/api/drives"),
+          fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/applications/user/${studentId}`),
+          fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/students/profile/${studentId}`),
         ]);
 
         if (drivesRes.ok) setDrives(await drivesRes.json());
@@ -129,7 +129,7 @@ function PlacementDrives() {
     setAiResult(null);
 
     try {
-      const res = await fetch("http://localhost:5000/api/ai/match-resume", {
+      const res = await fetch((import.meta.env.VITE_API_URL || "http://localhost:5000") + "/api/ai/match-resume", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ studentId, driveId }),
@@ -152,7 +152,7 @@ function PlacementDrives() {
   const handleApply = async (driveId) => {
     setActionMsg({ type: "", text: "" });
     try {
-      const res = await fetch("http://localhost:5000/api/applications/apply", {
+      const res = await fetch((import.meta.env.VITE_API_URL || "http://localhost:5000") + "/api/applications/apply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ studentId, driveId }),
