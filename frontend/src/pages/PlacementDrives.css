@@ -1,0 +1,265 @@
+/* Layout Wrapper */
+.pd-portal-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #0f172a;
+}
+
+/* Sidebar Navigation */
+.pd-portal-sidebar {
+  width: 260px;
+  background: #0f172a;
+  color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.pd-portal-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  padding-left: 8px;
+}
+
+.pd-brand-badge {
+  background: #2563eb;
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.pd-brand-text h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.pd-brand-text span {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.pd-portal-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.pd-portal-nav-item {
+  color: #94a3b8;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.pd-portal-nav-item:hover,
+.pd-portal-nav-item.active {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+.pd-portal-footer {
+  padding-top: 16px;
+  border-top: 1px solid #1e293b;
+}
+
+.pd-portal-logout {
+  color: #ef4444;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 14px;
+  display: block;
+}
+
+/* Main Viewport */
+.pd-portal-main {
+  flex: 1;
+  padding: 32px 40px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.pd-portal-topbar {
+  margin-bottom: 24px;
+}
+
+.pd-portal-topbar h1 {
+  margin: 0 0 4px 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.pd-portal-topbar p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Search and Filter Row */
+.pd-controls-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.pd-search-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.pd-search-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Grid of Company Cards */
+.pd-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.pd-drive-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pd-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.pd-card-header h2 {
+  margin: 0 0 2px 0;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+.pd-role {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.pd-package-pill {
+  background: #ecfdf5;
+  color: #059669;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Specifications Box */
+.pd-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #f1f5f9;
+}
+
+.pd-specs div small {
+  display: block;
+  color: #64748b;
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+
+.pd-specs div strong {
+  font-size: 12px;
+  color: #1e293b;
+  word-break: break-word;
+}
+
+/* Eligibility Badges */
+.pd-eligibility-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.pd-pill.eligible {
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.pd-pill.ineligible {
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Action Buttons */
+.pd-apply-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #0f172a;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.pd-apply-btn:hover:not(:disabled) {
+  background: #1e293b;
+}
+
+.pd-apply-btn.applied {
+  background: #10b981;
+  cursor: default;
+}
+
+.pd-apply-btn:disabled {
+  background: #cbd5e1;
+  color: #64748b;
+  cursor: not-allowed;
+}
