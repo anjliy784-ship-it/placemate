@@ -41,14 +41,14 @@ function AdminDashboard() {
     try {
       setLoading(true);
 
-      const appRes = await fetch((import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "/api/admin/applications");
+      const appRes = await fetch((import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "") + "/api/admin/applications");
       if (appRes.ok) {
         const appData = await appRes.json();
         setApplications(appData);
         setFilteredApps(appData);
       }
 
-      const metricRes = await fetch((import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "/api/admin/metrics");
+      const metricRes = await fetch((import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "") + "/api/admin/metrics");
       if (metricRes.ok) {
         const metricData = await metricRes.json();
         setMetrics(metricData);
@@ -97,7 +97,7 @@ function AdminDashboard() {
     setFormMsg("");
 
     try {
-      const res = await fetch((import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "/api/drives", {
+      const res = await fetch((import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "") + "/api/drives", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(driveForm),
@@ -141,7 +141,7 @@ function AdminDashboard() {
     if (!schedulingApp) return;
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + ""}/api/admin/applications/${schedulingApp.id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + ""}/api/admin/applications/${schedulingApp.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -167,7 +167,7 @@ function AdminDashboard() {
 
   const handleUpdateStatus = async (appId, newStatus, newStage) => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + ""}/api/admin/applications/${appId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + ""}/api/admin/applications/${appId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: newStatus, stage: newStage }),
