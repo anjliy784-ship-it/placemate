@@ -1,5 +1,9 @@
-const { Pool } = require('pg');
-require('dotenv').config();
+import pg from "pg";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const { Pool } = pg;
 
 const pool = process.env.DATABASE_URL
   ? new Pool({
@@ -7,17 +11,17 @@ const pool = process.env.DATABASE_URL
       ssl: { rejectUnauthorized: false },
     })
   : new Pool({
-      user: process.env.DB_USER || 'postgres',
-      host: process.env.DB_HOST || 'localhost',
-      database: process.env.DB_NAME || 'placemate',
-      password: process.env.DB_PASSWORD,
+      host: process.env.DB_HOST || "localhost",
       port: process.env.DB_PORT || 5432,
+      database: process.env.DB_NAME || "placemate",
+      user: process.env.DB_USER || "postgres",
+      password: process.env.DB_PASSWORD,
     });
 
 console.log(
   process.env.DATABASE_URL
-    ? '>>> Connecting to Cloud Neon DB via DATABASE_URL'
-    : `>>> Connecting to Local DB: ${process.env.DB_NAME || 'placemate'}`
+    ? ">>> Connecting to Cloud Neon DB via DATABASE_URL"
+    : `>>> Connecting to Local DB: ${process.env.DB_NAME || "placemate"}`
 );
 
-module.exports = pool;
+export default pool;
