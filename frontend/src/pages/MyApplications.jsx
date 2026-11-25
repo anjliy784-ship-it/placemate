@@ -82,7 +82,11 @@ function MyApplications() {
   const fetchApplications = async () => {
     try {
       setLoading(true);
+<<<<<<< HEAD
       const res = await fetch(`${import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "") + ""}/api/applications/user/${studentId}`);
+=======
+      const res = await fetch(`http://localhost:5000/api/applications/user/${studentId}`);
+>>>>>>> 2304e1cf27b174ed8b888798c55b392742339ef6
       if (res.ok) {
         const data = await res.json();
         setApplications(data);

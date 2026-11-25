@@ -101,9 +101,15 @@ function PlacementDrives() {
       try {
         setLoading(true);
         const [drivesRes, appliedRes, profileRes] = await Promise.all([
+<<<<<<< HEAD
           fetch((import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "") + "") + "/api/drives"),
           fetch(`${import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "") + ""}/api/applications/user/${studentId}`),
           fetch(`${import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "") + ""}/api/students/profile/${studentId}`),
+=======
+          fetch("http://localhost:5000/api/drives"),
+          fetch(`http://localhost:5000/api/applications/user/${studentId}`),
+          fetch(`http://localhost:5000/api/students/profile/${studentId}`),
+>>>>>>> 2304e1cf27b174ed8b888798c55b392742339ef6
         ]);
 
         if (drivesRes.ok) setDrives(await drivesRes.json());
@@ -129,7 +135,11 @@ function PlacementDrives() {
     setAiResult(null);
 
     try {
+<<<<<<< HEAD
       const res = await fetch((import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "") + "") + "/api/ai/match-resume", {
+=======
+      const res = await fetch("http://localhost:5000/api/ai/match-resume", {
+>>>>>>> 2304e1cf27b174ed8b888798c55b392742339ef6
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ studentId, driveId }),
@@ -152,7 +162,11 @@ function PlacementDrives() {
   const handleApply = async (driveId) => {
     setActionMsg({ type: "", text: "" });
     try {
+<<<<<<< HEAD
       const res = await fetch((import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "") + "") + "/api/applications/apply", {
+=======
+      const res = await fetch("http://localhost:5000/api/applications/apply", {
+>>>>>>> 2304e1cf27b174ed8b888798c55b392742339ef6
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ studentId, driveId }),

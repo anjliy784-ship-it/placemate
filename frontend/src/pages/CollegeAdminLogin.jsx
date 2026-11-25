@@ -50,7 +50,11 @@ function CollegeAdminLogin() {
 
     try {
       // Connect to the real backend admin login endpoint
+<<<<<<< HEAD
       const response = await fetch((import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "") + "") + "/api/admin/login", {
+=======
+      const response = await fetch("http://localhost:5000/api/admin/login", {
+>>>>>>> 2304e1cf27b174ed8b888798c55b392742339ef6
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

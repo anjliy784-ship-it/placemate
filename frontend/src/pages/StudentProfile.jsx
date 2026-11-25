@@ -106,7 +106,11 @@ function StudentProfile() {
 
     const fetchProfile = async () => {
       try {
+<<<<<<< HEAD
         const res = await fetch(`${import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "") + ""}/api/students/profile/${studentId}`);
+=======
+        const res = await fetch(`http://localhost:5000/api/students/profile/${studentId}`);
+>>>>>>> 2304e1cf27b174ed8b888798c55b392742339ef6
         if (res.ok) {
           const data = await res.json();
           setProfile({
@@ -135,7 +139,11 @@ function StudentProfile() {
   const runAiResumeAudit = async (idToScan) => {
     setAnalyzing(true);
     try {
+<<<<<<< HEAD
       const res = await fetch((import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "") + "") + "/api/ai/analyze-profile-resume", {
+=======
+      const res = await fetch("http://localhost:5000/api/ai/analyze-profile-resume", {
+>>>>>>> 2304e1cf27b174ed8b888798c55b392742339ef6
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ studentId: idToScan }),
@@ -159,7 +167,11 @@ function StudentProfile() {
     setStatusMsg({ type: "", text: "" });
 
     try {
+<<<<<<< HEAD
       const res = await fetch(`${import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "") + ""}/api/students/profile/${studentId}`, {
+=======
+      const res = await fetch(`http://localhost:5000/api/students/profile/${studentId}`, {
+>>>>>>> 2304e1cf27b174ed8b888798c55b392742339ef6
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -202,7 +214,11 @@ function StudentProfile() {
     formData.append("resume", selectedFile);
 
     try {
+<<<<<<< HEAD
       const res = await fetch(`${import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "") + ""}/api/students/upload-resume/${studentId}`, {
+=======
+      const res = await fetch(`http://localhost:5000/api/students/upload-resume/${studentId}`, {
+>>>>>>> 2304e1cf27b174ed8b888798c55b392742339ef6
         method: "POST",
         body: formData,
       });
