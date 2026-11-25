@@ -95,14 +95,14 @@ function StudentDashboard() {
     const fetchDashboardData = async () => {
       try {
         // 1. Fetch Student Profile Details
-        const profileRes = await fetch(`${import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + ""}/api/students/profile/${studentId}`);
+        const profileRes = await fetch(`${import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "") + ""}/api/students/profile/${studentId}`);
         if (profileRes.ok) {
           const profileData = await profileRes.json();
           setStudentInfo({ fullName: profileData.full_name || "Student" });
         }
 
         // 2. Fetch Live Dashboard Metrics
-        const statsRes = await fetch(`${import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + ""}/api/students/stats/${studentId}`);
+        const statsRes = await fetch(`${import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || (import.meta.env.VITE_API_URL || "http://localhost:5000") + "") + "") + ""}/api/students/stats/${studentId}`);
         if (statsRes.ok) {
           const statsData = await statsRes.json();
           setStats({
