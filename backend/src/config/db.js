@@ -1,10 +1,5 @@
-import pg from "pg";
-import dotenv from "dotenv";
-
-dotenv.config();
-
-const { Pool } = pg;
-<<<<<<< HEAD
+const { Pool } = require('pg');
+require('dotenv').config();
 
 const pool = process.env.DATABASE_URL
   ? new Pool({
@@ -12,24 +7,17 @@ const pool = process.env.DATABASE_URL
       ssl: { rejectUnauthorized: false },
     })
   : new Pool({
-      host: process.env.DB_HOST || "localhost",
-      port: process.env.DB_PORT || 5432,
-      database: process.env.DB_NAME || "placemate",
-      user: process.env.DB_USER || "postgres",
+      user: process.env.DB_USER || 'postgres',
+      host: process.env.DB_HOST || 'localhost',
+      database: process.env.DB_NAME || 'placemate',
       password: process.env.DB_PASSWORD,
+      port: process.env.DB_PORT || 5432,
     });
-=======
-console.log("DB password loaded:", Boolean(process.env.DB_PASSWORD));
-console.log("DB password length:", process.env.DB_PASSWORD?.length);
-console.log(">>> Connecting to DB:", process.env.DB_NAME, "on PORT:", process.env.DB_PORT, "USER:", process.env.DB_USER);
 
-const pool = new Pool({
-    host: process.env.DB_HOST || "localhost",
-    port: process.env.DB_PORT || 5432,
-    database: process.env.DB_NAME || "placemate",
-    user: process.env.DB_USER || "postgres",
-    password: process.env.DB_PASSWORD
-});
->>>>>>> 2304e1cf27b174ed8b888798c55b392742339ef6
+console.log(
+  process.env.DATABASE_URL
+    ? '>>> Connecting to Cloud Neon DB via DATABASE_URL'
+    : `>>> Connecting to Local DB: ${process.env.DB_NAME || 'placemate'}`
+);
 
-export default pool;
+module.exports = pool;
